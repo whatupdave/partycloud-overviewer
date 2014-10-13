@@ -14,5 +14,7 @@ ENV VERSION 1.8
 
 RUN wget --no-check-certificate https://s3.amazonaws.com/Minecraft.Download/versions/${VERSION}/${VERSION}.jar -P ~/.minecraft/versions/${VERSION}/
 
+ADD ./config.py /app/config.py
+
 ENTRYPOINT ["overviewer.py"]
-CMD ["/minecraft/world", "/www"]
+CMD ["-c", "/app/config.py"]
