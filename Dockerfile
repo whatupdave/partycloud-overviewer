@@ -12,9 +12,8 @@ RUN apt-get install -y python python-numpy python-imaging minecraft-overviewer
 
 ENV VERSION 1.8
 
-RUN wget --no-check-certificate https://s3.amazonaws.com/Minecraft.Download/versions/${VERSION}/${VERSION}.jar -P ~/.minecraft/versions/${VERSION}/
-
 ADD ./config.py /app/config.py
+RUN wget --no-check-certificate https://s3.amazonaws.com/Minecraft.Download/versions/${VERSION}/${VERSION}.jar -O /app/client.jar
 
 ENTRYPOINT ["overviewer.py"]
 CMD ["-c", "/app/config.py"]

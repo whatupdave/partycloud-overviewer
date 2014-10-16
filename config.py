@@ -1,5 +1,6 @@
 worlds["survival"] = "/data/world"
 outputdir = "/www"
+texturepath = "/app/client.jar"
 
 renders["survivalday"] = {
     "world": "survival",
